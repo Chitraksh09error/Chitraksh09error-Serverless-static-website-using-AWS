@@ -1,75 +1,91 @@
-Detailed Description / README Overview:
+# Serverless ATM Web App
 
-Serverless ATM Web Application
+A **serverless web-based ATM simulation** using AWS (S3, Lambda, API Gateway, DynamoDB, SNS) with modern UI and real-time transaction receipts.
 
-This project is a fully functional ATM simulation built using AWS serverless technologies. Users can:
+---
 
-Create an account with name, email, phone, and PIN
+## Overview
 
-Login securely using account ID and PIN
+This project is a **fully functional ATM simulation** built using **AWS serverless technologies**. Users can:
 
-Check balance in real-time
+* **Create an account** with name, email, phone, and PIN
+* **Login** securely using account ID and PIN
+* **Check balance** in real-time
+* **Deposit and withdraw funds**
+* Receive **dynamic ATM-style receipts** on the webpage
+* Get **transaction alerts via SMS and email** using **AWS SNS**
 
-Deposit and withdraw funds
+---
 
-Receive dynamic ATM-style receipts on the webpage
+## Features
 
-Get transaction alerts via SMS and email using AWS SNS
+* **Serverless architecture**: No servers to manage; uses AWS Lambda + API Gateway  
+* **DynamoDB integration**: Accounts and transactions stored in **NoSQL DynamoDB tables**  
+* **Modern, responsive UI**: Includes **ATM-style receipt printing**  
+* **Realistic transaction alerts**: Notifications sent to users via **AWS SNS**  
+* **UTF-8 support**: Proper display of the **₹ currency symbol**
 
-Features:
+---
 
-Serverless architecture: No servers to manage; uses AWS Lambda + API Gateway.
+## Tech Stack
 
-DynamoDB integration: Accounts and transactions stored in NoSQL DynamoDB tables.
+* **Frontend**: HTML, CSS, JavaScript  
+* **Backend**: AWS Lambda (Python)  
+* **Storage**: Amazon DynamoDB  
+* **API**: Amazon API Gateway  
+* **Hosting**: Amazon S3 (static web hosting)  
+* **Notifications**: AWS SNS for email/SMS alerts
 
-Modern, responsive UI: Includes ATM-style receipt printing on the right side.
+---
 
-Realistic transaction alerts: Notifications sent to users via AWS SNS.
+## How It Works
 
-UTF-8 support: Proper display of the ₹ currency symbol.
+1. User interacts with the **web interface** hosted on S3  
+2. All requests (create, login, deposit, withdraw, balance) are sent to **Lambda via API Gateway**  
+3. Lambda updates **DynamoDB** and sends back JSON responses  
+4. The frontend **parses the responses** and prints **ATM-style receipts** dynamically  
+5. For deposits/withdrawals, AWS SNS **sends SMS/email notifications** in real-time
 
-Tech Stack:
+---
 
-Frontend: HTML, CSS, JavaScript
+## Setup Instructions
 
-Backend: AWS Lambda (Python)
+1. Deploy **accounts** and **transactions** tables in DynamoDB  
+2. Create **Lambda function** with full access to DynamoDB and SNS  
+3. Configure **API Gateway** with POST `/atm` endpoint connected to Lambda  
+4. Host frontend in **S3 static website** and update API URL in JS  
+5. Subscribe an email/phone number in **SNS topic** to receive transaction alerts
 
-Storage: Amazon DynamoDB
+---
 
-API: Amazon API Gateway
+## Screenshots
 
-Hosting: Amazon S3 (static web hosting)
+### Account Creation
+![Account Creation](Images/1.png)
 
-Notifications: AWS SNS for email/SMS alerts
+### Login & Balance
+![Login & Balance](Images/2.png)
 
-How It Works:
+### Deposit & Withdrawal
+![Deposit & Withdrawal](Images/3.png)
 
-User interacts with the web interface hosted on S3.
+### ATM Receipt Display
+![ATM Receipt Display](Images/4.png)
 
-All requests (create, login, deposit, withdraw, balance) are sent to Lambda via API Gateway.
+### Transaction Alerts (SNS)
+![Transaction Alerts](Images/5.png)
 
-Lambda updates DynamoDB and sends back JSON responses.
+### Responsive UI
+![Responsive UI](Images/6.png)
 
-The frontend parses the responses and prints ATM-style receipts dynamically.
+---
 
-For deposits/withdrawals, AWS SNS sends SMS/email notifications in real-time.
+## Badges (Optional)
 
-Screenshots:
+* `AWS`  
+* `Serverless`  
+* `HTML/CSS/JS`
 
-[Screenshot of account creation]
+---
 
-[Screenshot of login + balance]
-
-[Screenshot of ATM receipt]
-
-Setup Instructions:
-
-Deploy accounts and transactions tables in DynamoDB.
-
-Create Lambda function with full access to DynamoDB and SNS.
-
-Configure API Gateway with POST /atm endpoint connected to Lambda.
-
-Host frontend in S3 static website and update API URL in JS.
-
-Subscribe an email/phone number in SNS topic to receive transaction alerts.
+**Author:** Chitraksh Chavan
