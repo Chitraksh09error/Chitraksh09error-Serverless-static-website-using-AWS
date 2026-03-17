@@ -1,5 +1,10 @@
 # Serverless ATM Web App
 
+![AWS](https://img.shields.io/badge/AWS-serverless-orange)
+![Serverless](https://img.shields.io/badge/Architecture-Serverless-blue)
+![HTML/CSS/JS](https://img.shields.io/badge/Frontend-HTML,CSS,JS-yellowgreen)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 A **serverless web-based ATM simulation** using AWS (S3, Lambda, API Gateway, DynamoDB, SNS) with modern UI and real-time transaction receipts.
 
 ---
@@ -77,14 +82,6 @@ This project is a **fully functional ATM simulation** built using **AWS serverle
 
 ### Responsive UI
 ![Responsive UI](Images/6.png)
-
----
-
-## Badges (Optional)
-
-* `AWS`  
-* `Serverless`  
-* `HTML/CSS/JS`
 
 ---
 
