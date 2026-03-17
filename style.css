@@ -1,0 +1,121 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:linear-gradient(135deg,#f1f5f9,#e2e8f0);
+  color:#0f172a;
+}
+
+/* center screen */
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+/* glass card */
+.card{
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  width:340px;
+  max-width:90%;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.subtitle{
+  color:#64748b;
+  margin-bottom:25px;
+}
+
+/* input */
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #e2e8f0;
+  font-size:14px;
+}
+
+/* buttons */
+button{
+  padding:12px 16px;
+  border:none;
+  border-radius:8px;
+  background:#2563eb;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  margin:5px;
+  transition:0.2s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 12px rgba(0,0,0,0.15);
+}
+
+.secondary{
+  background:#64748b;
+}
+
+/* ATM container */
+.container{
+  display:flex;
+  gap:40px;
+  padding:60px;
+  justify-content:center;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+/* ATM card */
+.atm{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  width:300px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* receipt */
+.receipt{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  width:320px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.receipt h3{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+pre{
+  font-family:Courier;
+  font-size:14px;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+
+/* hide */
+.hidden{
+  display:none;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px){
+  .container{
+    flex-direction:column;
+    padding:20px;
+    gap:20px;
+    align-items:center;
+  }
+}

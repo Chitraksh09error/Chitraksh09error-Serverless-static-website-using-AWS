@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ATOM Finance ATM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LANDING PAGE -->
+<div id="landing" class="center">
+  <div class="card">
+    <h1>ATOM Finance</h1>
+    <p class="subtitle">Smart Cloud ATM</p>
+    <div class="actions">
+      <button onclick="showCreate()">Create Account</button>
+      <button onclick="showLogin()">Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- CREATE ACCOUNT PAGE -->
+<div id="create" class="center hidden">
+  <div class="card">
+    <h2>Create Account</h2>
+    <input id="createName" placeholder="Full Name">
+    <input id="createEmail" placeholder="Email">
+    <input id="createPhone" placeholder="Phone">
+    <input id="createPin" placeholder="PIN">
+    <div class="actions">
+      <button onclick="createAccount()">Create</button>
+      <button class="secondary" onclick="backHome()">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="login" class="center hidden">
+  <div class="card">
+    <h2>Login</h2>
+    <input id="loginAccount" placeholder="Account ID">
+    <input id="loginPin" placeholder="PIN">
+    <div class="actions">
+      <button onclick="login()">Login</button>
+      <button class="secondary" onclick="backHome()">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ATM DASHBOARD -->
+<div id="atm" class="container hidden">
+  <div class="atm">
+    <h2>Welcome, <span id="atmName">User</span></h2>
+    <p>Account ID: <span id="atmId"></span></p>
+
+    <button onclick="balance()">Check Balance</button>
+
+    <input id="amount" placeholder="Amount">
+
+    <div class="actions">
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+
+  <div class="receipt">
+    <h3>ATOM Finance</h3>
+    <pre id="bill">
+-----------------------------
+        ATOM FINANCE
+          ATM RECEIPT
+-----------------------------
+
+Transaction : -
+Account ID  : -
+Amount      : -
+Balance     : -
+
+Date        : -
+
+-----------------------------
+   Thank you for banking
+        with ATOM
+-----------------------------
+    </pre>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
